@@ -2,10 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SensorDashboard.ViewModels"
+             
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SensorDashboard.Views.CameraDashboardView">
+             x:Class="SensorDashboard.Views.CameraDashboardView"
+             x:DataType="vm:CameraDashboardViewModel">
     
-    <TextBlock Text="Camera Dashboard" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    
+    <TextBlock Text="{Binding CurrentSensorState.Speed}"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
     <UserControl.Background>
         <SolidColorBrush Color="blue" Opacity="0.4" />
     </UserControl.Background>

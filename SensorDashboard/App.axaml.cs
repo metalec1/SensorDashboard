@@ -5,6 +5,7 @@ using SensorDashboard.ViewModels;
 using SensorDashboard.Views;
 using Microsoft.Extensions.DependencyInjection;
 using SensorDashboard.Services;
+using SensorDashboard.Models;
 
 namespace SensorDashboard;
 
@@ -19,6 +20,11 @@ public partial class App : Application
     {   
         var serviceCollection = new ServiceCollection();
         serviceCollection.AddSingleton<SensorClientService>();
+        serviceCollection.AddSingleton<SensorState>();
+        serviceCollection.AddSingleton<CameraDashboardViewModel>();
+        serviceCollection.AddSingleton<IrCameraDashboardViewModel>();
+        serviceCollection.AddSingleton<SettingsDashboardViewModel>();
+        serviceCollection.AddSingleton<MainViewModel>();
         var serviceProvider = serviceCollection.BuildServiceProvider();
         
         
@@ -26,7 +32,7 @@ public partial class App : Application
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel(serviceProvider.GetRequiredService<SensorClientService>()),
+                DataContext = serviceProvider.GetRequiredService<MainViewModel>(),
             };
         }
 

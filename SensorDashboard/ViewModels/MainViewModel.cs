@@ -1,18 +1,19 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using SensorDashboard;
 using SensorDashboard.Services;
+using SensorDashboard.Models;
 
 namespace SensorDashboard.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] public partial string Greeting { get; set; } = "Welcome to Avalonia!";
-    [ObservableProperty] public ViewModelBase currentViewModel;
+    [ObservableProperty] public partial ViewModelBase CurrentViewModel {get; set; }
     private ViewModelBase _cameraDashboardViewModel;
     private ViewModelBase _irCameraDashboardViewModel;
     private ViewModelBase _settingsDashboardViewModel;
     private SensorClientService _sensorClientService;
+    
     
     [RelayCommand]
     public void ShowSettingsDashboard()
@@ -33,14 +34,14 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    public MainViewModel(SensorClientService sensorClientService)
+    public MainViewModel(SensorClientService sensorClientService, CameraDashboardViewModel cameraDashboardViewModel, IrCameraDashboardViewModel irCameraDashboardViewModel, SettingsDashboardViewModel settingsDashboardViewModel)
     {   
-        _cameraDashboardViewModel = new CameraDashboardViewModel();
-        _irCameraDashboardViewModel = new IrCameraDashboardViewModel();
-        _settingsDashboardViewModel = new SettingsDashboardViewModel();
+        _cameraDashboardViewModel = cameraDashboardViewModel;
+        _irCameraDashboardViewModel = irCameraDashboardViewModel;
+        _settingsDashboardViewModel = settingsDashboardViewModel;
         _sensorClientService = sensorClientService;
         _sensorClientService.StartListening();
-        currentViewModel = _settingsDashboardViewModel;
+        CurrentViewModel = _settingsDashboardViewModel;
     }
 
 }

@@ -1,0 +1,29 @@
+using System;
+using CommunityToolkit.Mvvm.ComponentModel;
+using SensorDashboard.Models;
+using SensorDashboard.Services;
+
+namespace SensorDashboard.Models;
+
+public partial class SensorState : ObservableObject
+{
+    [ObservableProperty] public partial DateTime Timestamp { get; set; }
+    [ObservableProperty] public partial string Message { get; set; }
+    [ObservableProperty] public partial double Speed { get; set; }
+    [ObservableProperty] public partial bool IsActive { get; set; }
+    
+        
+    public SensorState(SensorClientService sensorClientService)
+    {
+        sensorClientService.SensorReadingReceived += UpdateSensorValues;
+        
+    }
+
+    public void UpdateSensorValues(SensorReading reading)
+    {   
+        Timestamp = reading.Timestamp;
+        Message = reading.Message;
+        Speed = reading.Speed;
+        IsActive = reading.IsActive;
+    }
+}
