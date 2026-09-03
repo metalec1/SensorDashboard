@@ -14,9 +14,57 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
+    
+    <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
+          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">
+        <Image x:Name="Video" Source="/Assets/images/polje_narava.jpg" Grid.ColumnSpan="10" Grid.RowSpan="8" Stretch="UniformToFill"></Image>
+        <Button Classes="nav" x:Name="CameraDashboard" Command="{Binding ShowCameraDashboardCommand}"
+                Grid.Row="0" 
+                Grid.Column="2" 
+                Content="CamD"
+                />
+        <Button Classes="nav" x:Name="Settings"  Command="{Binding ShowSettingsDashboardCommand}"
+                Grid.Column="4" 
+                Grid.Row="0"  
+                Content="Settings"  />
+        <Button Classes="nav" x:Name="IrCam" Command="{Binding ShowIrCameraDashboardCommand}"
+                Grid.Column="7" 
+                Grid.Row="0"  
+                Content="IrCam"  />
+        
+        
+        <!--
+        <Grid Grid.ColumnSpan="10" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">
+            <Grid.Background>
+                <SolidColorBrush Color="red" Opacity="0.4"></SolidColorBrush>
+            </Grid.Background>
+            <TextBlock Grid.Column="4"  Text="test"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center" />
+        </Grid> -->
+        <ContentControl Content="{Binding CurrentViewModel}" 
+                        Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="6">
+            <!--
+            <ContentControl.Background>
+                <SolidColorBrush Color="gray" Opacity="0.6" ></SolidColorBrush>
+            </ContentControl.Background>
+            -->
+            
+        </ContentControl>
+            
+        
+        <Border Grid.Row="7" Grid.ColumnSpan="10"  >
+            <Border.Background>
+                <SolidColorBrush Color="red" Opacity="0.4"></SolidColorBrush>
+            </Border.Background>
+        </Border>
+        
+    </Grid>
+    
+    <!---
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Greeting}"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center" /> -->
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
 
 </Window>
