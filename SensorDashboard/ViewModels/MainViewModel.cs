@@ -1,5 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using SensorDashboard;
+using SensorDashboard.Services;
 
 namespace SensorDashboard.ViewModels;
 
@@ -10,7 +12,8 @@ public partial class MainViewModel : ViewModelBase
     private ViewModelBase _cameraDashboardViewModel;
     private ViewModelBase _irCameraDashboardViewModel;
     private ViewModelBase _settingsDashboardViewModel;
-
+    private SensorClientService _sensorClientService;
+    
     [RelayCommand]
     public void ShowSettingsDashboard()
     {
@@ -30,11 +33,13 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    public MainViewModel()
+    public MainViewModel(SensorClientService sensorClientService)
     {   
         _cameraDashboardViewModel = new CameraDashboardViewModel();
         _irCameraDashboardViewModel = new IrCameraDashboardViewModel();
         _settingsDashboardViewModel = new SettingsDashboardViewModel();
+        _sensorClientService = sensorClientService;
+        _sensorClientService.StartListening();
         currentViewModel = _settingsDashboardViewModel;
     }
 

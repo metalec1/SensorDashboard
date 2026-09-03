@@ -3,6 +3,8 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using SensorDashboard.ViewModels;
 using SensorDashboard.Views;
+using Microsoft.Extensions.DependencyInjection;
+using SensorDashboard.Services;
 
 namespace SensorDashboard;
 
@@ -14,15 +16,20 @@ public partial class App : Application
     }
 
     public override void OnFrameworkInitializationCompleted()
-    {
+    {   
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddSingleton<SensorClientService>();
+        var serviceProvider = serviceCollection.BuildServiceProvider();
+        
+        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel(),
+                DataContext = new MainViewModel(serviceProvider.GetRequiredService<SensorClientService>()),
             };
         }
 
         base.OnFrameworkInitializationCompleted();
     }
-}
+} 
