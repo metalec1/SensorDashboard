@@ -1,4 +1,5 @@
 using System;
+using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using SensorDashboard.Models;
 using SensorDashboard.Services;
@@ -21,9 +22,14 @@ public partial class SensorState : ObservableObject
 
     public void UpdateSensorValues(SensorReading reading)
     {   
-        Timestamp = reading.Timestamp;
-        Message = reading.Message;
-        Speed = reading.Speed;
-        IsActive = reading.IsActive;
+        Dispatcher.UIThread.Post(() =>
+            {
+                Timestamp = reading.Timestamp;
+                Message = reading.Message;
+                Speed = reading.Speed;
+                IsActive = reading.IsActive;
+            }
+        );
+        
     }
 }
