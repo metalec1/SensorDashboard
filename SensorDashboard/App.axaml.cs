@@ -25,6 +25,8 @@ public partial class App : Application
         serviceCollection.AddSingleton<IrCameraDashboardViewModel>();
         serviceCollection.AddSingleton<SettingsDashboardViewModel>();
         serviceCollection.AddSingleton<MainViewModel>();
+        serviceCollection.AddSingleton<GeneralSettingsViewModel>();
+        serviceCollection.AddSingleton<NetworkSettingsViewModel>();
         var serviceProvider = serviceCollection.BuildServiceProvider();
         
         
