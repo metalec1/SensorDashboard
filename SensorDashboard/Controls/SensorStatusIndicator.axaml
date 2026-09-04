@@ -1,15 +1,19 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:SensorDashboard.Controls">
+        xmlns:controls="using:SensorDashboard.Controls"
+        xmlns:converters="using:SensorDashboard.Converters">
+    
     <Design.PreviewWith>
         <controls:SensorStatusIndicator />
     </Design.PreviewWith>
     
     <Styles.Resources>
+        <converters:BoolToBrushConverter x:Key="BoolToBrushConverter"/>
         <ControlTheme x:Key="{x:Type controls:SensorStatusIndicator}" TargetType="controls:SensorStatusIndicator">
             <Setter Property="Template">
                 <ControlTemplate>
-                    <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="BlueViolet"/>
+                    <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                             Fill="{TemplateBinding IsActive, Converter={StaticResource BoolToBrushConverter}}"/>
                 </ControlTemplate>
             </Setter>
         </ControlTheme>
