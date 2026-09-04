@@ -1,0 +1,17 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SensorDashboard.Controls">
+    <Design.PreviewWith>
+        <controls:SensorStatusIndicator />
+    </Design.PreviewWith>
+    
+    <Styles.Resources>
+        <ControlTheme x:Key="{x:Type controls:SensorStatusIndicator}" TargetType="controls:SensorStatusIndicator">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="BlueViolet"/>
+                </ControlTemplate>
+            </Setter>
+        </ControlTheme>
+    </Styles.Resources>    
+</Styles>

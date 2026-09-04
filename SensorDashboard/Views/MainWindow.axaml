@@ -3,6 +3,7 @@
         xmlns:vm="using:SensorDashboard.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="using:SensorDashboard.Controls"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SensorDashboard.Views.MainWindow"
         x:DataType="vm:MainViewModel"
@@ -31,7 +32,7 @@
                 Grid.Column="7" 
                 Grid.Row="0"  
                 Content="IrCam"  />
-        
+        <controls:SensorStatusIndicator Grid.Row="0" Grid.Column="0" Width="30" Height="30"/>
         
         <!--
         <Grid Grid.ColumnSpan="10" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">

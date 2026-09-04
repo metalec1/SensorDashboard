@@ -12,5 +12,6 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="avares://SensorDashboard/Styles/ButtonStyles.axaml"/>
+        <StyleInclude Source="avares://SensorDashboard/Controls/SensorStatusIndicator.axaml"/> <!-- dodamo pot do template-a da ga najde app-->
     </Application.Styles>
 </Application>
