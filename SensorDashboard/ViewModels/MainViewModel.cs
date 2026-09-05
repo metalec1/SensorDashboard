@@ -30,7 +30,7 @@ public partial class MainViewModel : ViewModelBase
     
     private ViewModelBase _cameraDashboardViewModel;
     private ViewModelBase _irCameraDashboardViewModel;
-    private ViewModelBase _settingsDashboardViewModel;
+    private SettingsDashboardViewModel _settingsDashboardViewModel;
     private ViewModelBase _backgroudCameraViewModel;
     private ViewModelBase _backgroudIrCameraViewModel;
     private SensorClientService _sensorClientService;
@@ -61,7 +61,8 @@ public partial class MainViewModel : ViewModelBase
 
     [RelayCommand]
     public void ShowCameraDashboard()
-    {
+    {   
+        _settingsDashboardViewModel.CloseSettingsMiniView();
         GridRowSpanBackground = _gridRowSpanCamera;
         GridColumnSpanBackground = _gridColumnSpanCamera;
         GridColumnBackground = _gridColumnCamera;
@@ -74,6 +75,7 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     public void ShowIrCameraDashboard()
     {   
+        _settingsDashboardViewModel.CloseSettingsMiniView();
         GridRowSpanBackground = _gridRowSpanIrCamera;
         GridColumnSpanBackground = _gridColumnSpanIrCamera;
         GridColumnBackground = _gridColumnIrCamera;
@@ -100,7 +102,7 @@ public partial class MainViewModel : ViewModelBase
         GridColumnBackground = _gridColumnCamera;
         GridRowBackground = _gridRowCamera;
         
-        BackgroundViewModel = null;
+        BackgroundViewModel = _backgroudCameraViewModel;
         CurrentViewModel = _settingsDashboardViewModel;
     }
 

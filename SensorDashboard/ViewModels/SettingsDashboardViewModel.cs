@@ -38,11 +38,18 @@ public partial class SettingsDashboardViewModel : ViewModelBase
             CurrentMiniViewModel = null;
         }
     }
+    
+  
+    public void CloseSettingsMiniView()
+    {
+        CurrentMiniViewModel = null;
+    }
 
     public SettingsDashboardViewModel(GeneralSettingsViewModel generalSettingsViewModel, NetworkSettingsViewModel networkSettingsViewModel)
     {
         _generalSettingsViewModel = generalSettingsViewModel;
         _networkSettingsViewModel = networkSettingsViewModel;
-        
+        CurrentMiniViewModel = null;
+
     }
 }
