@@ -7,6 +7,6 @@
     
     <TextBlock Text="General Settings Menuuuuu!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     <UserControl.Background>
-        <SolidColorBrush Color="CadetBlue" Opacity="0.9" />
+        <SolidColorBrush Color="CadetBlue" Opacity="0.3" />
     </UserControl.Background>
 </UserControl>

@@ -10,6 +10,19 @@
     <!-- Add Styles Here -->
     <Style Selector="Button.nav">
         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-        <Setter Property="Background" Value="red"></Setter>
+        <Setter Property="Background">
+            <SolidColorBrush Color="#b86c11" Opacity="0.6"></SolidColorBrush>
+        </Setter>
     </Style>
+    <Style Selector="Button.nav:pointerover /template/ ContentPresenter">
+        <Setter Property="Background">
+            <SolidColorBrush Color="#d68a2e" Opacity="0.6"></SolidColorBrush>
+        </Setter>
+    </Style>
+    <Style Selector="Button.nav:pressed /template/ ContentPresenter">
+        <Setter Property="Background">
+            <SolidColorBrush Color="#8f550d" Opacity="0.6"></SolidColorBrush>
+        </Setter>
+    </Style>
+    
 </Styles>

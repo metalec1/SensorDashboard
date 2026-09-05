@@ -14,7 +14,7 @@
     
     
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
-          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#b86c11">
+          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#a38f34">
         <!--
         <Image x:Name="Video" Source="/Assets/images/polje_narava.jpg" Grid.ColumnSpan="10" Grid.RowSpan="8" Stretch="UniformToFill"></Image>
         -->

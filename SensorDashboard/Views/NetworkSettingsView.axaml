@@ -8,7 +8,7 @@
     
     <TextBlock Text="Network settings" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     <UserControl.Background>
-        <SolidColorBrush Color="Yellow" Opacity="0.9" />
+        <SolidColorBrush Color="Yellow" Opacity="0.3" />
     </UserControl.Background>
     
 </UserControl>

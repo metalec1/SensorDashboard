@@ -39,7 +39,23 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     public void ShowSettingsDashboard()
     {
-        CurrentViewModel = _settingsDashboardViewModel;
+        if (CurrentViewModel == _settingsDashboardViewModel)
+        {
+            if (BackgroundViewModel == _backgroudCameraViewModel)
+            {
+                ShowCameraDashboard();
+            }
+            else if (BackgroundViewModel == _backgroudIrCameraViewModel)
+            {
+                ShowIrCameraDashboard();
+            }
+        }
+        else
+        {
+            CurrentViewModel = _settingsDashboardViewModel;
+        }
+
+        
         
     }
 
