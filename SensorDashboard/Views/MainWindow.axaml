@@ -10,15 +10,17 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="SensorDashboard">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
-    </Design.DataContext>
+  
+    
     
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
-          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">
+          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#b86c11">
+        <!--
         <Image x:Name="Video" Source="/Assets/images/polje_narava.jpg" Grid.ColumnSpan="10" Grid.RowSpan="8" Stretch="UniformToFill"></Image>
+        -->
+        <ContentControl Content="{Binding BackgroundViewModel}" 
+                        Grid.Column="{Binding GridColumnBackground}" Grid.Row="{Binding GridRowBackground}" Grid.ColumnSpan="{Binding GridColumnSpanBackground}" Grid.RowSpan="{Binding GridRowSpanBackground}"/>
+        
         <Button Classes="nav" x:Name="CameraDashboard" Command="{Binding ShowCameraDashboardCommand}"
                 Grid.Row="0" 
                 Grid.Column="2" 
@@ -33,7 +35,7 @@
                 Grid.Row="0"  
                 Content="IrCam"  />
         
-        
+       
         
         <!--
         <Grid Grid.ColumnSpan="10" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">

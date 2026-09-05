@@ -27,6 +27,8 @@ public partial class App : Application
         serviceCollection.AddSingleton<MainViewModel>();
         serviceCollection.AddSingleton<GeneralSettingsViewModel>();
         serviceCollection.AddSingleton<NetworkSettingsViewModel>();
+        serviceCollection.AddSingleton<BackgroundCameraViewModel>();
+        serviceCollection.AddSingleton<BackgroundIrCameraViewModel>();
         var serviceProvider = serviceCollection.BuildServiceProvider();
         
         

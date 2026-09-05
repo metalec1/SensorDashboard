@@ -1,0 +1,18 @@
+using System;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using CommunityToolkit.Mvvm.ComponentModel;
+
+
+namespace SensorDashboard.ViewModels;
+
+public partial class BackgroundIrCameraViewModel : ViewModelBase
+{
+    [ObservableProperty] public partial Bitmap PathToCameraImage { get; set; }
+    private readonly Bitmap _pathToCameraImage = new Bitmap(AssetLoader.Open(new Uri("avares://SensorDashboard/Assets/images/Ir-cam.jpg")));
+
+    public BackgroundIrCameraViewModel()
+    {
+        PathToCameraImage = _pathToCameraImage;
+    }
+}
