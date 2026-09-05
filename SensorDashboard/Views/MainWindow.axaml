@@ -21,19 +21,18 @@
         <ContentControl Content="{Binding BackgroundViewModel}" 
                         Grid.Column="{Binding GridColumnBackground}" Grid.Row="{Binding GridRowBackground}" Grid.ColumnSpan="{Binding GridColumnSpanBackground}" Grid.RowSpan="{Binding GridRowSpanBackground}"/>
         
-        <Button Classes="nav" x:Name="CameraDashboard" Command="{Binding ShowCameraDashboardCommand}"
-                Grid.Row="0" 
-                Grid.Column="2" 
-                Content="CamD"
-                />
-        <Button Classes="nav" x:Name="Settings"  Command="{Binding ShowSettingsDashboardCommand}"
-                Grid.Column="4" 
-                Grid.Row="0"  
-                Content="Settings"  />
-        <Button Classes="nav" x:Name="IrCam" Command="{Binding ShowIrCameraDashboardCommand}"
-                Grid.Column="7" 
-                Grid.Row="0"  
-                Content="IrCam"  />
+        <Viewbox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button Classes="nav"  Command="{Binding ShowCameraDashboardCommand}" Content="Camera Dashboard"/>
+        </Viewbox>
+        <Viewbox Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1">
+            <Button Classes="nav"  Command="{Binding ShowSettingsDashboardCommand}" Content="Settings"  />
+        </Viewbox>
+        <Viewbox Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Classes="nav" Command="{Binding ShowIrCameraDashboardCommand}" Content="IrCamera"  />
+        </Viewbox>
+        
+        
+        
         
        
         
