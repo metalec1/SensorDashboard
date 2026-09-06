@@ -15,9 +15,7 @@
     
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
           ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#a38f34">
-        <!--
-        <Image x:Name="Video" Source="/Assets/images/polje_narava.jpg" Grid.ColumnSpan="10" Grid.RowSpan="8" Stretch="UniformToFill"></Image>
-        -->
+       
         <ContentControl Content="{Binding BackgroundViewModel}" 
                         Grid.Column="{Binding GridColumnBackground}" Grid.Row="{Binding GridRowBackground}" Grid.ColumnSpan="{Binding GridColumnSpanBackground}" Grid.RowSpan="{Binding GridRowSpanBackground}"/>
         
@@ -36,38 +34,20 @@
         
        
         
-        <!--
-        <Grid Grid.ColumnSpan="10" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">
-            <Grid.Background>
-                <SolidColorBrush Color="red" Opacity="0.4"></SolidColorBrush>
-            </Grid.Background>
-            <TextBlock Grid.Column="4"  Text="test"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center" />
-        </Grid> -->
+       
         <ContentControl Content="{Binding CurrentViewModel}" 
-                        Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="6">
-            <!--
-            <ContentControl.Background>
-                <SolidColorBrush Color="gray" Opacity="0.6" ></SolidColorBrush>
-            </ContentControl.Background>
-            -->
-            
-        </ContentControl>
+                        Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="6"/>
             
         
         <Border Grid.Row="7" Grid.ColumnSpan="10"  >
             <Border.Background>
-                <SolidColorBrush Color="red" Opacity="0.4"></SolidColorBrush>
+                <SolidColorBrush Color="red" Opacity="0.4"/>
             </Border.Background>
         </Border>
         
     </Grid>
     
-    <!---
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Greeting}"
-                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center" /> -->
+   
 
 
 </Window>

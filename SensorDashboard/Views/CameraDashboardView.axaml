@@ -17,10 +17,5 @@
         <controls:SensorStatusIndicator Grid.Row="0" Grid.Column="7" Width="30" Height="30" IsActive="{Binding CurrentSensorState.IsActive }"/>
             
     </Grid>
-    <!--
-    <UserControl.Background>
-        <SolidColorBrush Color="blue" Opacity="0.4" />
-    </UserControl.Background>
-    -->
     
 </UserControl>

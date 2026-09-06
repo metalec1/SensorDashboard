@@ -11,17 +11,17 @@
     <Style Selector="Button.nav">
         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         <Setter Property="Background">
-            <SolidColorBrush Color="#b86c11" Opacity="0.6"></SolidColorBrush>
+            <SolidColorBrush Color="#b86c11" Opacity="0.6"/>
         </Setter>
     </Style>
     <Style Selector="Button.nav:pointerover /template/ ContentPresenter">
         <Setter Property="Background">
-            <SolidColorBrush Color="#d68a2e" Opacity="0.6"></SolidColorBrush>
+            <SolidColorBrush Color="#d68a2e" Opacity="0.6"/>
         </Setter>
     </Style>
     <Style Selector="Button.nav:pressed /template/ ContentPresenter">
         <Setter Property="Background">
-            <SolidColorBrush Color="#8f550d" Opacity="0.6"></SolidColorBrush>
+            <SolidColorBrush Color="#8f550d" Opacity="0.6"/>
         </Setter>
     </Style>
     

@@ -9,20 +9,20 @@ namespace SensorDashboard.Services;
 
 public class SensorClientService : IDisposable
 {   
-    private GrpcChannel channel;
-    private SensorService.SensorServiceClient client;
+    private GrpcChannel _channel;
+    private SensorService.SensorServiceClient _client;
     public event Action<SensorReading>? SensorReadingReceived;
 
     public SensorClientService(string grpcServerAddress = "http://localhost:5291")
     {
-        channel = GrpcChannel.ForAddress(grpcServerAddress);
-        client = new SensorService.SensorServiceClient(channel);
+        _channel = GrpcChannel.ForAddress(grpcServerAddress);
+        _client = new SensorService.SensorServiceClient(_channel);
     }
 
     public void StartListening()
     {
         
-        var call = client.SubscribeToSensor(new SensorUpdateRequest());
+        var call = _client.SubscribeToSensor(new SensorUpdateRequest());
         _ = Task.Run (async() =>
         {
             await foreach (var update in call.ResponseStream.ReadAllAsync())
@@ -43,7 +43,7 @@ public class SensorClientService : IDisposable
 
     public void Dispose()
     {
-        channel.Dispose();
+        _channel.Dispose();
     }
 
 }

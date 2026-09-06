@@ -5,9 +5,5 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SensorDashboard.Views.IrCameraDashboardView">
     <TextBlock Text="IR camera Dashboard" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    <!--
-    <UserControl.Background>
-        <SolidColorBrush Color="Yellow" Opacity="0.3" />
-    </UserControl.Background>
-    -->
+    
 </UserControl>

@@ -6,5 +6,5 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SensorDashboard.Views.BackgroundIrCameraView"
              x:DataType="vm:BackgroundIrCameraViewModel">
-    <Image x:Name="Video" Source="{Binding PathToCameraImage}" Stretch="UniformToFill"></Image>
+    <Image x:Name="Video" Source="{Binding PathToCameraImage}" Stretch="UniformToFill"/>
 </UserControl>
