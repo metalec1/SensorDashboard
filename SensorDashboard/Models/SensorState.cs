@@ -14,7 +14,7 @@ public partial class SensorState : ObservableObject
     [ObservableProperty] public partial bool IsActive { get; set; }
     
         
-    public SensorState(SensorClientService sensorClientService)
+    public SensorState(ISensorClientService sensorClientService)
     {
         sensorClientService.SensorReadingReceived += UpdateSensorValues;
         

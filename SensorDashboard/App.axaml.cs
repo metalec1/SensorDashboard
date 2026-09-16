@@ -11,6 +11,7 @@ namespace SensorDashboard;
 
 public partial class App : Application
 {
+    private bool _debug = true;
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -19,7 +20,17 @@ public partial class App : Application
     public override void OnFrameworkInitializationCompleted()
     {   
         var serviceCollection = new ServiceCollection();
-        serviceCollection.AddSingleton<SensorClientService>();
+        if (_debug)
+        {
+            serviceCollection.AddSingleton<ISensorClientService, FakeSensorClientService>();  
+        }
+        else
+        {
+            serviceCollection.AddSingleton<ISensorClientService, SensorClientService>();
+        }
+
+        
+        
         serviceCollection.AddSingleton<SensorState>();
         serviceCollection.AddSingleton<CameraDashboardViewModel>();
         serviceCollection.AddSingleton<IrCameraDashboardViewModel>();

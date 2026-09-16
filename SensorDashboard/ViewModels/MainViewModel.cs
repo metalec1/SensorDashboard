@@ -33,7 +33,7 @@ public partial class MainViewModel : ViewModelBase
     private SettingsDashboardViewModel _settingsDashboardViewModel;
     private ViewModelBase _backgroudCameraViewModel;
     private ViewModelBase _backgroudIrCameraViewModel;
-    private SensorClientService _sensorClientService;
+    private ISensorClientService _sensorClientService;
     
     
     [RelayCommand]
@@ -86,7 +86,7 @@ public partial class MainViewModel : ViewModelBase
     }
 
 
-    public MainViewModel(SensorClientService sensorClientService, CameraDashboardViewModel cameraDashboardViewModel, 
+    public MainViewModel(ISensorClientService sensorClientService, CameraDashboardViewModel cameraDashboardViewModel, 
         IrCameraDashboardViewModel irCameraDashboardViewModel, SettingsDashboardViewModel settingsDashboardViewModel, 
         BackgroundCameraViewModel backgroundCameraViewModel, BackgroundIrCameraViewModel backgroundIrCameraViewModel)
     {   

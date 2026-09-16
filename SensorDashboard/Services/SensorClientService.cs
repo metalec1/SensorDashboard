@@ -7,7 +7,7 @@ using SensorDashboard.Models;
 
 namespace SensorDashboard.Services;
 
-public class SensorClientService : IDisposable
+public class SensorClientService : IDisposable, ISensorClientService
 {   
     private GrpcChannel _channel;
     private SensorService.SensorServiceClient _client;
