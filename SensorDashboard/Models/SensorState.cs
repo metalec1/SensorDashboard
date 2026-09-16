@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
-using SensorDashboard.Models;
+using SensorDashboard.GrpcClient;
 using SensorDashboard.Services;
 
 namespace SensorDashboard.Models;

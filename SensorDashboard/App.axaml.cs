@@ -6,12 +6,13 @@ using SensorDashboard.Views;
 using Microsoft.Extensions.DependencyInjection;
 using SensorDashboard.Services;
 using SensorDashboard.Models;
+using SensorDashboard.GrpcClient;
 
 namespace SensorDashboard;
 
 public partial class App : Application
 {
-    private bool _debug = true;
+    private bool _debug = false;
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);

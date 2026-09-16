@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using SensorDashboard.Services;
-using SensorDashboard.Models;
+using SensorDashboard.GrpcClient;
 
 namespace SensorDashboard.ViewModels;
 

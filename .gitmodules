@@ -1,0 +1,3 @@
+[submodule "SensorDashboard.GrpcClient"]
+	path = SensorDashboard.GrpcClient
+	url = https://github.com/metalec1/SensorDashboard.GrpcClient.git
